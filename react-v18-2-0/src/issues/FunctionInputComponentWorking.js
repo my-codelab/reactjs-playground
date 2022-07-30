@@ -7,20 +7,27 @@ const InputName = ({ value, onChange }) => {
       onChange={(e) => {
         onChange(e.target.value);
       }}
-    ></input>
+    />
   );
 };
 
 function FunctionInputComponentWorking() {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   return (
     <div>
-      <div>Works</div>
-      <label>Name: </label>
-      <InputName value={name} onChange={setName}></InputName>
+      <div style={{ color: "white", backgroundColor: "darkgreen" }}>Works</div>
+      <label>First Name: </label>
+      <InputName value={firstName} onChange={setFirstName}></InputName>
+
+      <label>Last Name: </label>
+      <InputName value={lastName} onChange={setLastName}></InputName>
+
       <p>Output (syncronized)</p>
-      <p>{name}</p>
+      <p>
+        {firstName} : {lastName}
+      </p>
     </div>
   );
 }

@@ -2,20 +2,26 @@ import React, { useState } from "react";
 
 function FunctionInputComponentNotWorking() {
   const InputName = ({ value, onChange }) => {
-    return (
-      <input value={value} onChange={(e) => onChange(e.target.value)}></input>
-    );
+    return <input value={value} onChange={(e) => onChange(e.target.value)} />;
   };
 
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   return (
     <div>
-      <div>Not Work</div>
+      <div style={{ color: "white", backgroundColor: "darkred" }}>Not Work</div>
+
       <label>Name: </label>
-      <InputName value={name} onChange={setName}></InputName>
+      <InputName value={firstName} onChange={setFirstName}></InputName>
+
+      <label>Name: </label>
+      <InputName value={lastName} onChange={setLastName}></InputName>
+
       <p>Output (syncronized)</p>
-      <p>{name}</p>
+      <p>
+        {firstName} : {lastName}
+      </p>
     </div>
   );
 }
